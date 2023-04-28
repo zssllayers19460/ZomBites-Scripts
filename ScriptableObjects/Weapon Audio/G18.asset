@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83779eb75279efd4e86715f30c91f3a1, type: 3}
+  m_Name: G18
+  m_EditorClassIdentifier: 
+  Volume: 1
+  ShootingClip: {fileID: 8300000, guid: f211005c5575b4545bfb1d267488f628, type: 3}
+  ReloadClip: {fileID: 8300000, guid: 27835cac1e537fb4bacc6d1b183388d8, type: 3}
+  DryFireClip: {fileID: 8300000, guid: 3a11a1b088db8024f8e137fb88c7ae85, type: 3}
+  LastBulletClip: {fileID: 8300000, guid: 472575f2af8fd0d48abc7fb3868f12b7, type: 3}
+  RackingClip: {fileID: 8300000, guid: d6ab1e99a66a8184b9c24bc01f124f92, type: 3}
+  CasingClip: {fileID: 8300000, guid: 9a63ea6f00cba2049a6e2d721440e9b8, type: 3}
+  RocketFireClip: {fileID: 0}
+  RocketReloadClip: {fileID: 0}
+  RocketDryFireClip: {fileID: 0}
+  RocketCasingClip: {fileID: 0}
+  RocketExplosionClip: {fileID: 0}
+  MiniGunFireDownClip: {fileID: 0}
+  MiniGunFireStartClip: {fileID: 0}
+  MiniGunFireLoopClip: {fileID: 0}
+  MiniGunWindupClip: {fileID: 0}
+  MiniGunWindownClip: {fileID: 0}
+  MiniGunSpinLoopClip: {fileID: 0}
+  MiniGunCasingClip: {fileID: 0}
+  MiniGunDryFireClip: {fileID: 0}
+  MiniGunReloadClip: {fileID: 0}

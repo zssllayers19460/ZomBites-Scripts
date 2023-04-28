@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b20f5a4328b6c449e276376feeaafc, type: 3}
+  m_Name: RPG-7
+  m_EditorClassIdentifier: 
+  name: RPG-7
+  description: A portable, reusable, unguided, shoulder-launched, anti-tank, rocket-propelled
+    grenade launcher
+  icon: {fileID: 21300000, guid: f6efd5be3b69de94bab5a61996aa07b8, type: 3}
+  weaponPrefab: {fileID: 4401598529112238086, guid: a531883403b65fc49a8543e340eb1135,
+    type: 3}
+  muzzleFlash: {fileID: 483200998152565396, guid: 20c0f7e297297fc468f9740f6bb08cb1,
+    type: 3}
+  bulletProjectilePrefab: {fileID: 2447636517559979008, guid: 107480146231a8049aa85e1b2dee9079,
+    type: 3}
+  knifeSlashEffect: {fileID: 0}
+  weaponAudioSO: {fileID: 11400000, guid: 92ed52aba5788224b80e24c26ab683e6, type: 2}
+  recoilX: -15
+  recoilY: 2
+  recoilZ: 2
+  magazineSize: 1
+  storedAmmo: 8
+  range: 200
+  damage: 150
+  fireRate: 1
+  bulletSpeed: 100
+  weaponType: 6
+  weaponStyle: 1
+  fireType: 1

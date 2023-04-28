@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83779eb75279efd4e86715f30c91f3a1, type: 3}
+  m_Name: AK47
+  m_EditorClassIdentifier: 
+  Volume: 1
+  ShootingClip: {fileID: 8300000, guid: d037cb4d0c3ae01478d82d1f2c100cb9, type: 3}
+  ReloadClip: {fileID: 8300000, guid: 41591bff2582d864b85c2b2dbc7a1df6, type: 3}
+  DryFireClip: {fileID: 8300000, guid: 954501c23fcc9b342a10ebcecb07afe6, type: 3}
+  LastBulletClip: {fileID: 8300000, guid: ee229cf04d543464f818f940539f0cbd, type: 3}
+  RackingClip: {fileID: 8300000, guid: 2e56fd599e069fc4cb49d60b8c5ed8a3, type: 3}
+  CasingClip: {fileID: 8300000, guid: 612bbf7f8aadc8446a3aa46eb35a467b, type: 3}
+  RocketFireClip: {fileID: 0}
+  RocketReloadClip: {fileID: 0}
+  RocketDryFireClip: {fileID: 0}
+  RocketCasingClip: {fileID: 0}
+  RocketExplosionClip: {fileID: 0}

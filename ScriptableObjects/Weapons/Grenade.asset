@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da398b3645b5a124997b65800e27423a, type: 3}
+  m_Name: Grenade
+  m_EditorClassIdentifier: 
+  name: Grenade
+  description: Grenade
+  icon: {fileID: 0}
+  weaponPrefab: {fileID: 7648925350115917923, guid: 51c5bec0b8f8c264895b6500bc79e9cf,
+    type: 3}
+  explosionEffect: {fileID: 4501055269107238487, guid: fe10d5c48e80a8042a2856b9809b6a6f,
+    type: 3}
+  range: 50
+  throwForce: 25
+  explosionRadius: 50
+  fuseTime: 5
+  maxAmmo: 4
+  damageType: 0
+  handheldWeaponType: 0
+  handheldWeaponStyle: 0

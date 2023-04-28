@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83779eb75279efd4e86715f30c91f3a1, type: 3}
+  m_Name: Beretta 93R
+  m_EditorClassIdentifier: 
+  Volume: 1
+  ShootingClip: {fileID: 8300000, guid: bde6377eda2004d4bb5dc515596eb537, type: 3}
+  ReloadClip: {fileID: 8300000, guid: 4005769a7aa54ac4c8f323f922967365, type: 3}
+  DryFireClip: {fileID: 8300000, guid: efe751e8a6c98bf46bf3c0d9114096da, type: 3}
+  LastBulletClip: {fileID: 8300000, guid: 0d87aa84ba3c6664a82441dd7ce91448, type: 3}
+  RackingClip: {fileID: 8300000, guid: 962234b4ba6db7349a7e32104f214620, type: 3}
+  CasingClip: {fileID: 8300000, guid: 49137630ef9acf3428b64878f9f90da5, type: 3}
+  RocketFireClip: {fileID: 0}
+  RocketReloadClip: {fileID: 0}
+  RocketDryFireClip: {fileID: 0}
+  RocketCasingClip: {fileID: 0}
+  RocketExplosionClip: {fileID: 0}
+  MiniGunFireStopClip: {fileID: 0}
+  MiniGunFireLoopClip: {fileID: 0}
+  MiniGunSpinLoopClip: {fileID: 0}
+  MiniGunWindownClip: {fileID: 0}
+  MiniGunWindupClip: {fileID: 0}
+  MiniGunCasingClip: {fileID: 0}
+  MiniGunDryFireClip: {fileID: 0}
+  MiniGunReloadClip: {fileID: 0}
+  KnifeStabClip: {fileID: 0}
+  KnifeSliceClip: {fileID: 0}
+  KnifeUnsheatheClip: {fileID: 0}
+  KnifeSheatheClip: {fileID: 0}
+  KnifeSharpeningClip: {fileID: 0}

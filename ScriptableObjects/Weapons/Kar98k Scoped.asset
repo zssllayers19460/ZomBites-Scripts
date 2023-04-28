@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b20f5a4328b6c449e276376feeaafc, type: 3}
+  m_Name: Kar98k Scoped
+  m_EditorClassIdentifier: 
+  name: Kar98K Scoped
+  description: "Controlled-feed bolt-action rifle based on the Mauser M98 system.
+    Its internal magazine can be loaded with five 7.92\xD757mm Mauser cartridges
+    from a stripper clip or one-by-one"
+  icon: {fileID: 21300000, guid: 204c7fd3a9c6bdb4d97e5f1f4679c4a1, type: 3}
+  weaponPrefab: {fileID: 6849012823707841867, guid: 96585736571bb154ba0a6fe2169746b1,
+    type: 3}
+  muzzleFlash: {fileID: 6624361252477542208, guid: 56873d1855a7f0c4f98daf57e17b08e1,
+    type: 3}
+  bulletProjectilePrefab: {fileID: 6070134115941182218, guid: fba98acfbd877284a959c9ae5d1b7132,
+    type: 3}
+  knifeSlashEffect: {fileID: 0}
+  weaponAudioSO: {fileID: 11400000, guid: 3d84f64e7addb3b46b1cd433523cae47, type: 2}
+  recoilX: -10
+  recoilY: 3
+  recoilZ: 3
+  magazineSize: 5
+  storedAmmo: 45
+  range: 200
+  damage: 100
+  fireRate: 2
+  bulletSpeed: 1000
+  weaponType: 4
+  weaponStyle: 0
+  fireType: 1
