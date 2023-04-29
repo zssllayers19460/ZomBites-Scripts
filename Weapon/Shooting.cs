@@ -379,7 +379,7 @@ public class Shooting : MonoBehaviour
             if(primaryCurrentAmmo <= 0)
             {
                 primaryMagazineIsEmpty = true;
-                CheckCanShoot(manager.currentlyEquippedWeapon);
+                CheckCanShoot(slot);
             }
             else
             {
@@ -398,7 +398,7 @@ public class Shooting : MonoBehaviour
             if(secondaryCurrentAmmo <= 0)
             {
                 secondaryMagazineIsEmpty = true;
-                CheckCanShoot(manager.currentlyEquippedWeapon);
+                CheckCanShoot(slot);
             }
             else
             {
@@ -417,7 +417,7 @@ public class Shooting : MonoBehaviour
             if(meleeCurrentAmmo <= 0)
             {
                 meleeMagazineIsEmpty = true;
-                CheckCanShoot(manager.currentlyEquippedWeapon);
+                CheckCanShoot(slot);
             }
             else
             {
@@ -468,6 +468,7 @@ public class Shooting : MonoBehaviour
             // If we have enough ammo to reload the magazine
             if(primaryCurrentAmmoStorage >= ammoToReload)
             {
+                CheckCanShoot(slot);
                 // If current magazine is full, skip reloading
                 if(primaryCurrentAmmo == inventory.GetItem(0).magazineSize)
                 {
@@ -483,7 +484,7 @@ public class Shooting : MonoBehaviour
                 currentWeapon.weaponAudioSO.PlayRocketReloadClip(source);
 
                 primaryMagazineIsEmpty = false;
-                CheckCanShoot(slot);
+                
             }
             else
             {
@@ -499,6 +500,7 @@ public class Shooting : MonoBehaviour
             // If we have enough ammo to reload the magazine
             if(secondaryCurrentAmmoStorage >= ammoToReload)
             {
+                CheckCanShoot(slot);
                 // If current magazine is full, skip reloading
                 if(secondaryCurrentAmmo == inventory.GetItem(1).magazineSize)
                 {
@@ -514,7 +516,6 @@ public class Shooting : MonoBehaviour
                 currentWeapon.weaponAudioSO.PlayRocketReloadClip(source);
 
                 secondaryMagazineIsEmpty = false;
-                CheckCanShoot(slot);
             }
             else
             {
@@ -539,6 +540,7 @@ public class Shooting : MonoBehaviour
             // If we have enough ammo to reload the magazine
             if(meleeCurrentAmmoStorage >= ammoToReload)
             {
+                CheckCanShoot(slot);
                 // If current magazine is full, skip reloading
                 if(meleeCurrentAmmo == inventory.GetItem(2).magazineSize)
                 {
@@ -554,7 +556,6 @@ public class Shooting : MonoBehaviour
                 currentWeapon.weaponAudioSO.PlayRocketReloadClip(source);
 
                 meleeMagazineIsEmpty = false;
-                CheckCanShoot(slot);
             }
             else
             {
@@ -574,6 +575,13 @@ public class Shooting : MonoBehaviour
         }
         
         if(slot == 1)
+        {
+            if(secondaryMagazineIsEmpty)
+                canShoot = false;
+            else
+                canShoot = true;
+        }
+        if(slot == 2)
         {
             if(secondaryMagazineIsEmpty)
                 canShoot = false;
