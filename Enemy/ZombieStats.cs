@@ -7,10 +7,12 @@ public class ZombieStats : CharacterStats
     public bool canAttack = true;
     public int damage;
     public float attackSpeed;
-    public float destroyDeadZombieDelay = 20f;
+    public int maxNumDeadZombies = 10; // Maximum number of dead zombies to keep track of
+    private float deathTime;
 
     private ZombieController zombieController;
-    
+
+    private static List<ZombieStats> deadZombies = new List<ZombieStats>();
 
     private void Start()
     {
@@ -27,7 +29,23 @@ public class ZombieStats : CharacterStats
     {
         base.Die();
         zombieController.Die();
-        Destroy(gameObject, destroyDeadZombieDelay);
+
+        if (deadZombies.Count >= maxNumDeadZombies)
+        {
+            ZombieStats oldestZombie = deadZombies[0];
+            foreach (ZombieStats zombie in deadZombies)
+            {
+                if (zombie.deathTime < oldestZombie.deathTime)
+                {
+                    oldestZombie = zombie;
+                }
+            }
+            deadZombies.Remove(oldestZombie);
+            Destroy(oldestZombie.gameObject);
+        }
+
+        deadZombies.Add(this);
+        deathTime = Time.time;
     }
 
     public void InitVariable()

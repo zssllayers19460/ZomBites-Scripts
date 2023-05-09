@@ -29,15 +29,7 @@ public class Shooting : MonoBehaviour
     [HideInInspector] public int meleeCurrentAmmoStorage;
 
     // Particles
-    public GameObject dirtParticleEffect = null;
-    public GameObject waterParticleEffect = null;
-    public GameObject brickParticleEffect = null;
-    public GameObject concreteParticleEffect = null;
-    public GameObject metalParticleEffect = null;
-    public GameObject woodParticleEffect = null;
-    public GameObject stoneParticleEffect = null;
-    public GameObject sandParticleEffect = null;
-    public GameObject bulletFleshImpactPrefab = null;
+    public GameObject zombieBloodVFX;
 
     // References
     private Camera cam;
@@ -48,6 +40,8 @@ public class Shooting : MonoBehaviour
     private AudioSource source;
     private Hitmarker hitmarker;
     private BulletInstantiator bulletInstantiator;
+    private BloodEffectController bloodEffectController;
+    private ImpactEffectController impactEffectController;
     
 
     private void Start()
@@ -86,6 +80,8 @@ public class Shooting : MonoBehaviour
 
         if(Physics.Raycast(ray, out hit, currentWeaponRange))
         {
+            //bulletInstantiator.OnCollisionEnter(new Collision());
+
             print(hit.transform.name);
 
             if(hit.transform.tag == "Enemy")
@@ -101,43 +97,43 @@ public class Shooting : MonoBehaviour
                     }
 
                     // Spawn Hit Particles
-                    SpawnBloodParticles(hit.point, hit.normal);
-
-                    Instantiate(bulletFleshImpactPrefab, hit.point, Quaternion.LookRotation(hit.normal), hit.transform.Find("ZombieF_root"));
+                    SpawnBloodVisualEffect(hit);
+                    // Spawn Hit Particles
+                    //bloodEffectController.PlayBloodEffect();
                 }
             }
 
             if(hit.transform.tag == "Dirt")
             {
-                SpawnDirtParticle(hit.point, hit.normal);
+                impactEffectController.SpawnDirtParticle(hit.point, hit.normal);
             }
             if(hit.transform.tag == "Water")
             {
-                SpawnWaterParticle(hit.point, hit.normal);
+                impactEffectController.SpawnWaterParticle(hit.point, hit.normal);
             }
             if(hit.transform.tag == "Metal")
             {
-                SpawnMetalParticle(hit.point, hit.normal);
+                impactEffectController.SpawnMetalParticle(hit.point, hit.normal);
             }
             if(hit.transform.tag == "Concrete")
             {
-                SpawnConcreteParticle(hit.point, hit.normal);
+                impactEffectController.SpawnConcreteParticle(hit.point, hit.normal);
             }
             if(hit.transform.tag == "Brick")
             {
-                SpawnBrickParticle(hit.point, hit.normal);
+                impactEffectController.SpawnBrickParticle(hit.point, hit.normal);
             }
             if(hit.transform.tag == "Wood")
             {
-                SpawnWoodParticle(hit.point, hit.normal);
+                impactEffectController.SpawnWoodParticle(hit.point, hit.normal);
             }
             if(hit.transform.tag == "Stone")
             {
-                SpawnStoneParticle(hit.point, hit.normal);
+                impactEffectController.SpawnStoneParticle(hit.point, hit.normal);
             }
             if(hit.transform.tag == "Sand")
             {
-                SpawnSandParticle(hit.point, hit.normal);
+                impactEffectController.SpawnSandParticle(hit.point, hit.normal);
             }
         }
         
@@ -154,51 +150,11 @@ public class Shooting : MonoBehaviour
         }
     }
 
-    public void SpawnBloodParticles(Vector3 position, Vector3 normal)
+    public void SpawnBloodVisualEffect(RaycastHit hit)
     {
-        Instantiate(bulletFleshImpactPrefab, position, Quaternion.FromToRotation(Vector3.up, normal));
+        Instantiate(zombieBloodVFX, hit.point, Quaternion.LookRotation(hit.normal), hit.transform);
     }
-
-    public void SpawnDirtParticle(Vector3 position, Vector3 normal)
-    {
-        Instantiate(dirtParticleEffect, position, Quaternion.FromToRotation(Vector3.up, normal));
-    }
-
-    public void SpawnWaterParticle(Vector3 position, Vector3 normal)
-    {
-        Instantiate(waterParticleEffect, position, Quaternion.FromToRotation(Vector3.up, normal));
-    }
-
-    public void SpawnMetalParticle(Vector3 position, Vector3 normal)
-    {
-        Instantiate(metalParticleEffect, position, Quaternion.FromToRotation(Vector3.up, normal));
-    }
-
-    public void SpawnBrickParticle(Vector3 position, Vector3 normal)
-    {
-        Instantiate(brickParticleEffect, position, Quaternion.FromToRotation(Vector3.up, normal));
-    }
-
-    public void SpawnConcreteParticle(Vector3 position, Vector3 normal)
-    {
-        Instantiate(concreteParticleEffect, position, Quaternion.FromToRotation(Vector3.up, normal));
-    }
-
-    public void SpawnWoodParticle(Vector3 position, Vector3 normal)
-    {
-        Instantiate(woodParticleEffect, position, Quaternion.FromToRotation(Vector3.up, normal));
-    }
-
-    public void SpawnStoneParticle(Vector3 position, Vector3 normal)
-    {
-        Instantiate(stoneParticleEffect, position, Quaternion.FromToRotation(Vector3.up, normal));
-    }
-
-    public void SpawnSandParticle(Vector3 position, Vector3 normal)
-    {
-        Instantiate(sandParticleEffect, position, Quaternion.FromToRotation(Vector3.up, normal));
-    }
-
+    
     public void Shoot()
     {
         CheckCanShoot(manager.currentlyEquippedWeapon);
@@ -211,6 +167,8 @@ public class Shooting : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
+                    bulletInstantiator.InstantiateBullet(currentWeapon);
+
                     recoil.RecoilFire(recoilX, recoilY, recoilZ);
 
                     RaycastShoot(currentWeapon);
@@ -229,6 +187,8 @@ public class Shooting : MonoBehaviour
                 {
                     if (Time.time >= lastShootTime + currentWeapon.fireRate)
                     {
+                        bulletInstantiator.InstantiateBullet(currentWeapon);
+
                         recoil.RecoilFire(recoilX, recoilY, recoilZ);
 
                         lastShootTime = Time.time;
@@ -258,6 +218,8 @@ public class Shooting : MonoBehaviour
                 {
                     if (Time.time >= lastShootTime + currentWeapon.fireRate)
                     {
+                        bulletInstantiator.InstantiateBullet(currentWeapon);
+
                         recoil.RecoilFire(recoilX, recoilY, recoilZ);
 
                         RaycastShoot(currentWeapon);
@@ -278,6 +240,7 @@ public class Shooting : MonoBehaviour
             if (currentWeapon.weaponType == WeaponType.Minigun)
             {
                 // Instantiate Bullet prefab
+                bulletInstantiator.InstantiateBullet(currentWeapon);
 
                 recoil.RecoilFire(recoilX, recoilY, recoilZ);
             }
@@ -286,9 +249,9 @@ public class Shooting : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
-                    recoil.RecoilFire(recoilX, recoilY, recoilZ);
+                    bulletInstantiator.InstantiateBullet(currentWeapon);
 
-                    bulletInstantiator.InstantiateBullet(manager.currentWeaponBarrel);
+                    recoil.RecoilFire(recoilX, recoilY, recoilZ);
 
                     currentWeapon.weaponAudioSO.PlayRocketFireClip(source);
 
@@ -619,5 +582,7 @@ public class Shooting : MonoBehaviour
         source = GetComponent<AudioSource>();
         hitmarker = GetComponentInChildren<Hitmarker>();
         bulletInstantiator = GetComponentInChildren<BulletInstantiator>();
+        bloodEffectController = GetComponentInParent<BloodEffectController>();
+        impactEffectController = GetComponentInParent<ImpactEffectController>();
     }
 }

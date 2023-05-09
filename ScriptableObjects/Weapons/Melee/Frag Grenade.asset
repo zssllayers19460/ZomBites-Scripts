@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053983f2e97f8624db810668ee0a2534, type: 3}
+  m_Name: Frag Grenade
+  m_EditorClassIdentifier: 
+  name: Frag Grenade
+  description: Frag Grenade
+  icon: {fileID: 21300000, guid: b33578f7986977246ba2a27dc2ae4346, type: 3}
+  meleePrefab: {fileID: 4765184696621089796, guid: 51c5bec0b8f8c264895b6500bc79e9cf,
+    type: 3}
+  explosionEffect: {fileID: 4501055269107238487, guid: fe10d5c48e80a8042a2856b9809b6a6f,
+    type: 3}
+  throwForce: 70
+  explosionDelay: 4
+  explosionRadius: 50
+  damage: 100
+  meleeAudioSO: {fileID: 11400000, guid: 23301e42895305b41ad10c81751b1fae, type: 2}
+  handHeldStyle: 0
+  handHeldType: 0

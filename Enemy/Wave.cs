@@ -8,7 +8,5 @@ public class Wave
     public string name;
     public int enemiesAmmount;
     public float delay = 0.7f;
-    public GameObject enemy;
-    //public int extraHealth = 0;
-    
+    public List<GameObject> enemy;    
 }

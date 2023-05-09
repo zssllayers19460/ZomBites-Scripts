@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b20f5a4328b6c449e276376feeaafc, type: 3}
+  m_Name: Mac 10
+  m_EditorClassIdentifier: 
+  name: Mac 10
+  description: MAC-10, is a compact, blowback operated machine pistol/submachine
+    gun, chambered in either . 45 ACP or 9mm
+  icon: {fileID: 21300000, guid: f6d46f5b9f2a93d438a4b338a6f67297, type: 3}
+  weaponPrefab: {fileID: 5876440368021074167, guid: ce07cd099b163cf46b6c2abd242615a0,
+    type: 3}
+  muzzleFlash: {fileID: 8625144545347816232, guid: 206acbd7acd50f443bc82635db502530,
+    type: 3}
+  bulletProjectilePrefab: {fileID: 2150696704083828778, guid: 4abbf9b22292a49428f5485faa2b18d1,
+    type: 3}
+  knifeSlashEffect: {fileID: 0}
+  weaponAudioSO: {fileID: 11400000, guid: 33b34d04d007bd246817281e65e666ab, type: 2}
+  recoilX: -15
+  recoilY: 8
+  recoilZ: 10
+  magazineSize: 32
+  storedAmmo: 192
+  range: 60
+  damage: 18
+  fireRate: 0.08
+  bulletSpeed: 0.1
+  weaponType: 1
+  weaponStyle: 0
+  fireType: 0

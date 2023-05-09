@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83779eb75279efd4e86715f30c91f3a1, type: 3}
+  m_Name: G36C
+  m_EditorClassIdentifier: 
+  Volume: 1
+  ShootingClip: {fileID: 8300000, guid: 06b0bd6f35007b240b25df4286b6626f, type: 3}
+  ReloadClip: {fileID: 8300000, guid: 28ca0cabe380c2843af1b3389486fd8e, type: 3}
+  DryFireClip: {fileID: 8300000, guid: 19efb90e0d8d3d247a9c04c06ead531c, type: 3}
+  LastBulletClip: {fileID: 8300000, guid: ef8a60b6fb2e8a24aa5c80a1d64ec6d1, type: 3}
+  RackingClip: {fileID: 8300000, guid: af75dfd9b76b03a42998ae51bb533c4b, type: 3}
+  CasingClip: {fileID: 8300000, guid: 531adb9e0d318e3439f668c11aeba950, type: 3}

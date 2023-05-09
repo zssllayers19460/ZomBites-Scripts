@@ -45,11 +45,16 @@ public class WeaponPickup : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Weapon newWeapon = item as Weapon;
-                
-                print("Picked up or Hit: " + hit.transform.name);
+                if (item is Weapon newWeapon)
+                {
+                    inventory.AddItem(newWeapon);
+                }
+                else if (item is Melee newMelee)
+                {
+                    inventory.AddMeleeItem(newMelee);
+                }
 
-                inventory.AddItem(newWeapon);
+                print("Picked up or Hit: " + hit.transform.name);
                 Destroy(hit.transform.gameObject, weaponDestroyDelay);
             }
         }

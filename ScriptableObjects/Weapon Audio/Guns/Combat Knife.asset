@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83779eb75279efd4e86715f30c91f3a1, type: 3}
+  m_Name: Combat Knife
+  m_EditorClassIdentifier: 
+  Volume: 1
+  ShootingClip: {fileID: 0}
+  ReloadClip: {fileID: 0}
+  DryFireClip: {fileID: 0}
+  LastBulletClip: {fileID: 0}
+  RackingClip: {fileID: 0}
+  CasingClip: {fileID: 0}
+  RocketFireClip: {fileID: 0}
+  RocketReloadClip: {fileID: 0}
+  RocketDryFireClip: {fileID: 0}
+  RocketCasingClip: {fileID: 0}
+  RocketExplosionClip: {fileID: 0}
+  MiniGunFireStopClip: {fileID: 0}
+  MiniGunFireLoopClip: {fileID: 0}
+  MiniGunSpinLoopClip: {fileID: 0}
+  MiniGunWindownClip: {fileID: 0}
+  MiniGunWindupClip: {fileID: 0}
+  MiniGunCasingClip: {fileID: 0}
+  MiniGunDryFireClip: {fileID: 0}
+  MiniGunReloadClip: {fileID: 0}
+  KnifeStabClip: {fileID: 8300000, guid: 0cd77984ca929a74798bdbf4668d89d5, type: 3}
+  KnifeSliceClip: {fileID: 8300000, guid: fbd67a7df2f8d3c4ea278804046b131d, type: 3}
+  KnifeUnsheatheClip: {fileID: 8300000, guid: b9fc771d95fa2b4449b0c2c61c5e0ead, type: 3}
+  KnifeSheatheClip: {fileID: 8300000, guid: 2a8a506b3f190f8479c43af32182e866, type: 3}
+  KnifeSharpeningClip: {fileID: 8300000, guid: 0f02f22d64cfbee4aafe8886a8d5cace, type: 3}

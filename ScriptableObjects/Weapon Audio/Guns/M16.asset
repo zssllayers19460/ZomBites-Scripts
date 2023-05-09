@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83779eb75279efd4e86715f30c91f3a1, type: 3}
+  m_Name: M16
+  m_EditorClassIdentifier: 
+  Volume: 1
+  ShootingClip: {fileID: 8300000, guid: 9badc6c5b42d50a4093e59f8b0daf587, type: 3}
+  ReloadClip: {fileID: 8300000, guid: c823462ce2f292c45a1d6d1f7e99d91d, type: 3}
+  DryFireClip: {fileID: 8300000, guid: 738e045d6bea2cd4b8507b6ff0c433ca, type: 3}
+  LastBulletClip: {fileID: 8300000, guid: 93231f376a0d88e4cb3c88dcdba9a858, type: 3}
+  RackingClip: {fileID: 8300000, guid: d2e08999b340d6647abc21a7f0705fbd, type: 3}
+  CasingClip: {fileID: 8300000, guid: d52b4ba8cadabb44ba524779a6c4407a, type: 3}
+  RocketFireClip: {fileID: 0}
+  RocketReloadClip: {fileID: 0}
+  RocketDryFireClip: {fileID: 0}
+  RocketCasingClip: {fileID: 0}
+  RocketExplosionClip: {fileID: 0}

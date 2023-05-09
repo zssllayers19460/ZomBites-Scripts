@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83779eb75279efd4e86715f30c91f3a1, type: 3}
+  m_Name: RPD
+  m_EditorClassIdentifier: 
+  Volume: 1
+  ShootingClip: {fileID: 8300000, guid: f41b2c3833793a547a83f89d734b2945, type: 3}
+  ReloadClip: {fileID: 8300000, guid: eaaed5b131f02a64b927c053d43e6fa1, type: 3}
+  DryFireClip: {fileID: 8300000, guid: a45e501f80ea26e4ba40ea11223a2210, type: 3}
+  LastBulletClip: {fileID: 8300000, guid: 1c6d376cb2aa7fd4aa3cfb7f41396104, type: 3}
+  RackingClip: {fileID: 8300000, guid: c0fca321ea78b3049b939a9927f57842, type: 3}
+  CasingClip: {fileID: 8300000, guid: aca71550e80e33d4c859b9fb97361c17, type: 3}
+  RocketFireClip: {fileID: 0}
+  RocketReloadClip: {fileID: 0}
+  RocketDryFireClip: {fileID: 0}
+  RocketCasingClip: {fileID: 0}
+  RocketExplosionClip: {fileID: 0}
+  MiniGunFireStopClip: {fileID: 0}
+  MiniGunFireLoopClip: {fileID: 0}
+  MiniGunSpinLoopClip: {fileID: 0}
+  MiniGunWindownClip: {fileID: 0}
+  MiniGunWindupClip: {fileID: 0}
+  MiniGunCasingClip: {fileID: 0}
+  MiniGunDryFireClip: {fileID: 0}
+  MiniGunReloadClip: {fileID: 0}
+  KnifeStabClip: {fileID: 0}
+  KnifeSliceClip: {fileID: 0}
+  KnifeUnsheatheClip: {fileID: 0}
+  KnifeSheatheClip: {fileID: 0}
+  KnifeSharpeningClip: {fileID: 0}

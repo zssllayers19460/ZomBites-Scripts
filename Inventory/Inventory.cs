@@ -6,6 +6,7 @@ public class Inventory : MonoBehaviour
 {
     // 0 = Primary, 1 = Secondary, 2 = Melee
     [SerializeField] private Weapon[] weapons;
+    [SerializeField] private Melee[] melee;
 
     // Script References
     private Shooting shooting;
@@ -18,9 +19,9 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(Weapon newItem)
     {
-        int newItemIndex = (int) newItem.weaponStyle;
+        int newItemIndex = (int)newItem.weaponStyle;
 
-        if(weapons[newItemIndex] != null)
+        if (weapons[newItemIndex] != null)
         {
             RemoveItem(newItemIndex);
         }
@@ -29,9 +30,27 @@ public class Inventory : MonoBehaviour
         shooting.InitAmmo((int)newItem.weaponStyle, newItem);
     }
 
+    public void AddMeleeItem(Melee newMeleeItem)
+    {
+        int newMeleeIndex = (int)newMeleeItem.handHeldStyle;
+
+        if (melee[newMeleeIndex] != null)
+        {
+            RemoveMeleeItem(newMeleeIndex);
+        }
+        melee[newMeleeIndex] = newMeleeItem;
+
+        //lethalShooting.InitAmmo((int)newMeleeItem.handHeldStyle, newMeleeItem);
+    }
+
     public void RemoveItem(int index)
     {
         weapons[index] = null;
+    }
+
+    public void RemoveMeleeItem(int index)
+    {
+        melee[index] = null;
     }
 
     public Weapon GetItem(int index)
@@ -39,9 +58,15 @@ public class Inventory : MonoBehaviour
         return weapons[index];
     }
 
+    public Melee GetMeleeItem(int index)
+    {
+        return melee[index];
+    }
+
     public void InitVariables()
     {
         weapons = new Weapon[3];
+        melee = new Melee[4];
     }
 
     private void GetReferences()

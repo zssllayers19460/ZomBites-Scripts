@@ -9,10 +9,13 @@ public class EnemySpawner : MonoBehaviour
         Spawning, Waiting, Counting
     };
 
+    public int MaxEnemiesToSpawn = 15;
+
     [SerializeField] private List<CharacterStats> enemyList;
     [SerializeField] private float timeBetweenWaves = 5f;
     [SerializeField] private float waveCountdown = 0;
-    [SerializeField] private Wave[] waves;
+    [SerializeField] private float firstWaveTimer = 10f;
+    [SerializeField] private List<Wave> waves;
     [SerializeField] private Transform[] spawners;
 
     private SpawnState state = SpawnState.Counting;
@@ -21,15 +24,15 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        waveCountdown = timeBetweenWaves;
+        waveCountdown = firstWaveTimer;
         currentWave = 0;
     }
 
     private void Update()
     {
-        if(state == SpawnState.Waiting)
+        if (state == SpawnState.Waiting)
         {
-            if(!EnemiesAreDead())
+            if (!EnemiesAreDead())
             {
                 return;
             }
@@ -41,9 +44,9 @@ public class EnemySpawner : MonoBehaviour
             //print(EnemiesAreDead());
         }
 
-        if(waveCountdown <= 0)
+        if (waveCountdown <= 0)
         {
-            if(state != SpawnState.Spawning)
+            if (state != SpawnState.Spawning)
             {
                 // Spawn enemies
                 StartCoroutine(SpawnWave(waves[currentWave]));
@@ -58,26 +61,63 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator SpawnWave(Wave wave)
     {
         state = SpawnState.Spawning;
+        int enemiesToSpawn = wave.enemiesAmmount;
 
-        for(int i = 0; i < wave.enemiesAmmount; i++)
+        while (enemiesToSpawn > 0)
         {
-            SpawnZombie(wave.enemy);
-            yield return new WaitForSeconds(wave.delay);
+            int maxEnemiesToSpawn = Mathf.Min(enemiesToSpawn, MaxEnemiesToSpawn);
+            int numEnemiesToSpawn = Mathf.Min(maxEnemiesToSpawn, wave.enemy.Count);
+
+            for (int i = 0; i < numEnemiesToSpawn; i++)
+            {
+                GameObject enemyPrefab = wave.enemy[i];
+                SpawnZombie(enemyPrefab);
+                yield return new WaitForSeconds(wave.delay);
+                enemiesToSpawn--;
+            }
+
+            // Wait until some enemies are dead before spawning more
+            while (CountLivingEnemies() >= maxEnemiesToSpawn && !AllEnemiesDead())
+            {
+                yield return null;
+            }
         }
 
         state = SpawnState.Waiting;
-
         yield break;
     }
 
-    public void SpawnZombie(GameObject enemy)
+    private int CountLivingEnemies()
     {
-        //print(randomInt);
+        int count = 0;
+        foreach (CharacterStats enemy in enemyList)
+        {
+            if (!enemy.IsDead())
+            {
+                count++;
+            }
+        }
+        return count;
+    }
 
+    private bool AllEnemiesDead()
+    {
+        foreach (CharacterStats enemy in enemyList)
+        {
+            if (!enemy.IsDead())
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void SpawnZombie(GameObject enemyPrefab)
+    {
         int randomInt = Random.Range(1, spawners.Length);
         Transform randomSpawner = spawners[randomInt];
-        
-        GameObject newEnemy = Instantiate(enemy, randomSpawner.position, randomSpawner.rotation);
+
+        GameObject newEnemy = Instantiate(enemyPrefab, randomSpawner.position, randomSpawner.rotation);
         CharacterStats newEnemyStats = newEnemy.GetComponent<CharacterStats>();
 
         enemyList.Add(newEnemyStats);
@@ -86,9 +126,9 @@ public class EnemySpawner : MonoBehaviour
     private bool EnemiesAreDead()
     {
         int i = 0;
-        foreach(CharacterStats enemy in enemyList)
+        foreach (CharacterStats enemy in enemyList)
         {
-            if(enemy.IsDead())
+            if (enemy.IsDead())
             {
                 i++;
             }
@@ -106,7 +146,7 @@ public class EnemySpawner : MonoBehaviour
         state = SpawnState.Counting;
         waveCountdown = timeBetweenWaves;
 
-        if(currentWave + 1 > waves.Length - 1)
+        if (currentWave + 1 > waves.Count - 1)
         {
             currentWave = 0;
             //print("Completed the game, Well Done");
@@ -114,6 +154,6 @@ public class EnemySpawner : MonoBehaviour
         else
         {
             currentWave++;
-        }   
+        }
     }
 }

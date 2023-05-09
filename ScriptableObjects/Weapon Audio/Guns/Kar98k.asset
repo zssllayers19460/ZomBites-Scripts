@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83779eb75279efd4e86715f30c91f3a1, type: 3}
+  m_Name: Kar98k
+  m_EditorClassIdentifier: 
+  Volume: 1
+  ShootingClip: {fileID: 8300000, guid: b1d4e30e196130b429cce43e93192513, type: 3}
+  ReloadClip: {fileID: 8300000, guid: bcc845661df4cde44896ec1fcfcf5ff7, type: 3}
+  DryFireClip: {fileID: 8300000, guid: 391893f41c0f68643ad6e62d428b79dd, type: 3}
+  LastBulletClip: {fileID: 8300000, guid: 6470749681174f54e906d83c52b3bf61, type: 3}
+  RackingClip: {fileID: 8300000, guid: 8f335e9f1c11a9d48946cafeb111b524, type: 3}
+  CasingClip: {fileID: 8300000, guid: c0cb1d4c1a0065d44b8f3a1901167d36, type: 3}
+  RocketFireClip: {fileID: 0}
+  RocketReloadClip: {fileID: 0}
+  RocketDryFireClip: {fileID: 0}
+  RocketCasingClip: {fileID: 0}
+  RocketExplosionClip: {fileID: 0}

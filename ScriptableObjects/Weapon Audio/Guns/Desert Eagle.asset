@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83779eb75279efd4e86715f30c91f3a1, type: 3}
+  m_Name: Desert Eagle
+  m_EditorClassIdentifier: 
+  Volume: 1
+  ShootingClip: {fileID: 8300000, guid: 09ec71a83d95e5c4c838e7f482d18255, type: 3}
+  ReloadClip: {fileID: 8300000, guid: 25b55a8b1d3a2a649aae36f5da46fee1, type: 3}
+  DryFireClip: {fileID: 8300000, guid: 682d53ee8925de54fa55b1b37f29ddd8, type: 3}
+  LastBulletClip: {fileID: 8300000, guid: 73fc006a3b5e8474cb8c6ea3519975b6, type: 3}
+  RackingClip: {fileID: 8300000, guid: 879f06a285a8ef9409ed8464c1112bf0, type: 3}
+  CasingClip: {fileID: 8300000, guid: 26c173c1f7fd6db43b5635c84d3b8dc1, type: 3}
