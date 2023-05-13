@@ -15,14 +15,18 @@ MonoBehaviour:
   name: Frag Grenade
   description: Frag Grenade
   icon: {fileID: 21300000, guid: b33578f7986977246ba2a27dc2ae4346, type: 3}
-  meleePrefab: {fileID: 4765184696621089796, guid: 51c5bec0b8f8c264895b6500bc79e9cf,
+  meleePrefab: {fileID: 1096182540108666025, guid: 9c88a919821d223479003c7162778ba2,
     type: 3}
   explosionEffect: {fileID: 4501055269107238487, guid: fe10d5c48e80a8042a2856b9809b6a6f,
     type: 3}
-  throwForce: 70
+  dangerGrenadeImage: {fileID: 21300000, guid: b33578f7986977246ba2a27dc2ae4346, type: 3}
+  throwForce: 18
   explosionDelay: 4
-  explosionRadius: 50
-  damage: 100
+  explosionRadius: 7
+  explosionForce: 1500
+  damage: 108
+  grenadeToHold: 1
+  grenadesInInventory: 5
   meleeAudioSO: {fileID: 11400000, guid: 23301e42895305b41ad10c81751b1fae, type: 2}
   handHeldStyle: 0
   handHeldType: 0

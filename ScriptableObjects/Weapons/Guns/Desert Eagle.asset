@@ -33,7 +33,7 @@ MonoBehaviour:
   range: 50
   damage: 25
   fireRate: 0.5
-  bulletSpeed: 0.1
+  bulletSpeed: 0.5
   weaponType: 5
   weaponStyle: 1
   fireType: 0

@@ -31,8 +31,15 @@ public class Weapon : Item
 
     public void RecoilFire()
     {
-        recoil.RecoilFire(recoilX, recoilY, recoilZ);
-    }
+        if (weaponType == WeaponType.AssaultRifle || weaponType == WeaponType.SubMachineGun || weaponType == WeaponType.LightMachineGun || weaponType == WeaponType.Shotgun || weaponType == WeaponType.Sniper || weaponType == WeaponType.Pistol || weaponType == WeaponType.Launcher || weaponType == WeaponType.Minigun)
+        {
+            recoil.RecoilFire(recoilX, recoilY, recoilZ);
+        }
+        else if (weaponType == WeaponType.Melee)
+        {
+            // do nothing for melee weapons you dont want recoil for melee weapons, just think about it
+        }
+    } 
 }
 
 public enum WeaponType
@@ -64,5 +71,3 @@ public enum FireType
     Semi,
     Burst
 }
-
-

@@ -20,6 +20,11 @@ public class ZombieStats : CharacterStats
         InitVariable();
     }
 
+    private void Update()
+    {
+        Debug.Log(health);
+    }
+
     public void DealDamage(CharacterStats statsToDamage)
     {
         statsToDamage.TakeDamage(damage);
@@ -50,7 +55,7 @@ public class ZombieStats : CharacterStats
 
     public void InitVariable()
     {
-        maxHealth = 100;
+        maxHealth = 200;
         SetHealthTo(maxHealth);
         isDead = false;
         damage = 25;

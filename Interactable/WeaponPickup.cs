@@ -6,7 +6,7 @@ using TMPro;
 
 public class WeaponPickup : MonoBehaviour
 {
-    [SerializeField] private float pickupRange;
+    public float pickupRange;
     [SerializeField] private float weaponDestroyDelay;
     [SerializeField] private LayerMask pickupLayer;
 

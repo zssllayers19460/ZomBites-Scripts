@@ -9,7 +9,7 @@ public class EquipmentManager : MonoBehaviour
     [HideInInspector] public GameObject currentWeaponObject = null;
     [HideInInspector] public GameObject currentMeleeWeapon = null;
     [HideInInspector] public Transform currentWeaponBarrel = null;
-    [HideInInspector] public Transform currentMeleeWeaponPoint = null;
+    public Transform currentMeleeWeaponPoint = null;
     public KeyCode equipPrimary = KeyCode.Alpha1;
     public KeyCode equipSecondary = KeyCode.Alpha2;
     public KeyCode useMeleeKnife = KeyCode.V;
@@ -90,7 +90,6 @@ public class EquipmentManager : MonoBehaviour
         currentlyEquippedMelee = (int)melee.handHeldStyle;
         currentMeleeWeapon = Instantiate(melee.meleePrefab, WeaponHolder);
         currentMeleeWeaponPoint = currentMeleeWeapon.transform.Find("Point");
-        //knife.UseKnife();
         shooting.enabled = false;
         lethalShooting.enabled = true;
     }

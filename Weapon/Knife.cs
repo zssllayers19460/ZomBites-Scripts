@@ -11,6 +11,8 @@ public class Knife : MonoBehaviour
     public GameObject plasterSplatParticleEffect;
     public GameObject bulletFleshImpactPrefab;
 
+    private RaycastHit hit;
+
     private Camera cam;
     private EquipmentManager manager;
     private Inventory inventory;
@@ -25,7 +27,6 @@ public class Knife : MonoBehaviour
     public void RaycastShoot(Weapon currentWeapon)
     {
         Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-        RaycastHit hit;
 
         float currentWeaponRange = currentWeapon.range;
 
