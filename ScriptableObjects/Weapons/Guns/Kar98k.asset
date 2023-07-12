@@ -9,31 +9,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b20f5a4328b6c449e276376feeaafc, type: 3}
+  m_Script: {fileID: 11500000, guid: 31d074cfcf595384ba8a3e58d4f9719b, type: 3}
   m_Name: Kar98k
   m_EditorClassIdentifier: 
-  name: Kar98K
-  description: "Controlled-feed bolt-action rifle based on the Mauser M98 system.
-    Its internal magazine can be loaded with five 7.92\xD757mm Mauser cartridges
-    from a stripper clip or one-by-one"
-  icon: {fileID: 21300000, guid: 204c7fd3a9c6bdb4d97e5f1f4679c4a1, type: 3}
-  weaponPrefab: {fileID: 5307401050636951614, guid: 381801832788aa94585cd3d074432109,
+  name: Kar98k
+  description: The Kar98k is a bolt-action rifle, Known for its accuracy and reliability,
+    it featured a 7.92mm caliber and a five-round internal magazine.
+  icon: {fileID: 21300000, guid: 1b9e492fda2ad06409ab1a1345af6468, type: 3}
+  weaponPrefab: {fileID: 4049532571370817360, guid: 18ec74bb2f73a394fb894e25b55a1761,
     type: 3}
-  muzzleFlash: {fileID: 6624361252477542208, guid: 56873d1855a7f0c4f98daf57e17b08e1,
+  muzzleFlash: {fileID: 6624361252477542208, guid: baf8ea787f8d02b49849893d5cdb1eb6,
     type: 3}
-  bulletProjectilePrefab: {fileID: 6070134115941182218, guid: fba98acfbd877284a959c9ae5d1b7132,
+  bulletTrail: {fileID: 3738106130314735046, guid: 4283e6f05d147e24c9ab34aa0587df1f,
+    type: 3}
+  bulletProjectilePrefab: {fileID: 6070134115941182218, guid: abe91509259695c4ca8defb670e3d636,
     type: 3}
   knifeSlashEffect: {fileID: 0}
-  weaponAudioSO: {fileID: 11400000, guid: 3d84f64e7addb3b46b1cd433523cae47, type: 2}
-  recoilX: -6
-  recoilY: 2
-  recoilZ: 2
+  weaponAudioSO: {fileID: 0}
+  recoilX: -8
+  recoilY: 7
+  recoilZ: 6
+  aimingRecoilX: -10
+  aimingRecoilY: 6
+  aimingRecoilZ: 4
   magazineSize: 5
-  storedAmmo: 45
+  storedAmmo: 50
   range: 200
   damage: 100
-  fireRate: 2
-  bulletSpeed: 0.1
+  headShotDamage: 150
+  fireRate: 1
+  bulletSpeed: 1800
+  aimingSpread: 0
+  spread: 4
   weaponType: 4
   weaponStyle: 0
   fireType: 1

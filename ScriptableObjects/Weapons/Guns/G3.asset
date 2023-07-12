@@ -9,30 +9,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b20f5a4328b6c449e276376feeaafc, type: 3}
+  m_Script: {fileID: 11500000, guid: 31d074cfcf595384ba8a3e58d4f9719b, type: 3}
   m_Name: G3
   m_EditorClassIdentifier: 
-  name: Heckler & Koch G3
-  description: The G3 is a selective-fire automatic weapon that employs a roller-delayed
-    blowback operating system.
-  icon: {fileID: 21300000, guid: 34256b332c1a98747a62777d8dbf0be0, type: 3}
-  weaponPrefab: {fileID: 5702085896852350045, guid: e535e85cba8f33d48a4d02b0093567fe,
+  name: HK G3
+  description: The HK G3 is a battle-tested rifle renowned for its reliability, accuracy,
+    and versatility. It features a roller-delayed blowback system, ensuring reliable
+    operation even in adverse conditions. The G3 is chambered in 7.62x51mm NATO,
+    providing excellent stopping power and effective range.
+  icon: {fileID: 21300000, guid: 573f0c80d3295bd4693d6b54666fbad2, type: 3}
+  weaponPrefab: {fileID: 454178191640118039, guid: 5444898f66ce0e94b9b4f20979a97180,
     type: 3}
-  muzzleFlash: {fileID: 8348321241120124084, guid: 4608dddc600dfc949973854592c8f0ca,
+  muzzleFlash: {fileID: 8348321241120124084, guid: 2cdf13ad1e3a0e54c88c8037aedbee30,
     type: 3}
-  bulletProjectilePrefab: {fileID: 4113946446770678678, guid: 62595a257ec47134abdbfb54e26a292a,
+  bulletTrail: {fileID: 3738106130314735046, guid: 4283e6f05d147e24c9ab34aa0587df1f,
+    type: 3}
+  bulletProjectilePrefab: {fileID: 3037494990510629775, guid: d6b818b0ee707c14cbc27c6873a79674,
     type: 3}
   knifeSlashEffect: {fileID: 0}
-  weaponAudioSO: {fileID: 11400000, guid: e72181f70960fa3449f47f2b788bfdb7, type: 2}
+  weaponAudioSO: {fileID: 0}
   recoilX: -12
-  recoilY: 6
-  recoilZ: 6
+  recoilY: 5
+  recoilZ: 7
+  aimingRecoilX: -7
+  aimingRecoilY: 5
+  aimingRecoilZ: 3
   magazineSize: 30
-  storedAmmo: 210
-  range: 200
-  damage: 20
-  fireRate: 0.12
-  bulletSpeed: 0.08
+  storedAmmo: 180
+  range: 130
+  damage: 22
+  headShotDamage: 30
+  fireRate: 0.195
+  bulletSpeed: 2000
+  aimingSpread: 0.2
+  spread: 4
   weaponType: 0
   weaponStyle: 0
   fireType: 0

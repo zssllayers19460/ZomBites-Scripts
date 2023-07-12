@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 497a37e731c2efd4db9740547fb71447, type: 3}
+  m_Name: Flashbang
+  m_EditorClassIdentifier: 
+  name: Flashbang
+  description: A flashbang is a non-lethal explosive device used by law enforcement
+    and military personnel. It emits a blinding flash of light and a loud bang upon
+    detonation, disorienting and temporarily stunning anyone in its vicinity.
+  icon: {fileID: 21300000, guid: e8b80262a970c5d4c999d642ca42fcc2, type: 3}
+  meleePrefab: {fileID: 3677304705992045943, guid: 03ef389cddb186d44ae4b11f28e15707,
+    type: 3}
+  explosionEffect: {fileID: 4501055269107238487, guid: 3745039088c715444ac85adaba75d7f8,
+    type: 3}
+  dangerGrenadeImage: {fileID: 0}
+  throwForce: 10
+  explosionDelay: 5
+  explosionRadius: 35
+  explosionForce: 5
+  damage: 10
+  storedGrenades: 1
+  maxGrenades: 4
+  meleeAudioSO: {fileID: 0}
+  handHeldStyle: 2
+  handHeldType: 1

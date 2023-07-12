@@ -9,31 +9,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b20f5a4328b6c449e276376feeaafc, type: 3}
+  m_Script: {fileID: 11500000, guid: 31d074cfcf595384ba8a3e58d4f9719b, type: 3}
   m_Name: M16
   m_EditorClassIdentifier: 
   name: M16
-  description: The M16 Assault Rifle is the standard-issue shoulder weapon, Designed
-    to fire small, high-velocity rounds and Designed to fire small, high-velocity
-    rounds
-  icon: {fileID: 21300000, guid: 82a7679d32a104341b344bcd4cab20b1, type: 3}
-  weaponPrefab: {fileID: 4649232682425639976, guid: 262e535f028ed7c4b82d00780e7ce367,
+  description: The M16 is a widely recognized assault rifle that boasts a lightweight
+    design, gas-operated mechanism, and selective fire capability, making it a favored
+    weapon among military forces worldwide for its accuracy, range, and reliability.
+  icon: {fileID: 21300000, guid: 6fee3831b98b8014fa7257f489a6099d, type: 3}
+  weaponPrefab: {fileID: 7324416409370304341, guid: 52f965993db786d4f8dc7cc94b1d8b4a,
     type: 3}
-  muzzleFlash: {fileID: 4344865740230981269, guid: b658bb1657e4b5d46b6ee77270caec0a,
+  muzzleFlash: {fileID: 4344865740230981269, guid: 4f4f634944ed31e459880f7e946da99a,
     type: 3}
-  bulletProjectilePrefab: {fileID: 4113946446770678678, guid: 62595a257ec47134abdbfb54e26a292a,
+  bulletTrail: {fileID: 3738106130314735046, guid: 4283e6f05d147e24c9ab34aa0587df1f,
+    type: 3}
+  bulletProjectilePrefab: {fileID: 3037494990510629775, guid: d6b818b0ee707c14cbc27c6873a79674,
     type: 3}
   knifeSlashEffect: {fileID: 0}
-  weaponAudioSO: {fileID: 11400000, guid: b1c04d04b6fda8c49b237327e6604160, type: 2}
-  recoilX: -8
-  recoilY: 3
-  recoilZ: 4
+  weaponAudioSO: {fileID: 0}
+  recoilX: -7
+  recoilY: 6
+  recoilZ: 5
+  aimingRecoilX: -6
+  aimingRecoilY: 6
+  aimingRecoilZ: 5
   magazineSize: 30
-  storedAmmo: 210
-  range: 210
-  damage: 30
-  fireRate: 0.1
-  bulletSpeed: 0.08
+  storedAmmo: 180
+  range: 145
+  damage: 19
+  headShotDamage: 22
+  fireRate: 0.14
+  bulletSpeed: 2000
+  aimingSpread: 0.16
+  spread: 4
   weaponType: 0
   weaponStyle: 0
-  fireType: 2
+  fireType: 0

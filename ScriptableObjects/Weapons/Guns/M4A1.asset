@@ -9,30 +9,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b20f5a4328b6c449e276376feeaafc, type: 3}
+  m_Script: {fileID: 11500000, guid: 31d074cfcf595384ba8a3e58d4f9719b, type: 3}
   m_Name: M4A1
   m_EditorClassIdentifier: 
   name: M4A1
-  description: 5.56mm Carbine Lightweight, gas operated, air cooled, magazine fed,
-    selective rate, shoulder fired weapon with a collapsible stock
-  icon: {fileID: 21300000, guid: 580a7a5716e90f44aac29616bf3ea279, type: 3}
-  weaponPrefab: {fileID: 4892555769025832846, guid: 084c2201aefb5c54a8cb0770bd302f54,
+  description: The M4A1 is a versatile assault rifle widely used by military, It
+    features a compact design, selective fire capability, and a reliable gas-operated
+    system, Also known for its accuracy and reliability.
+  icon: {fileID: 21300000, guid: 255bff2af4c612c4d9db24d19f228240, type: 3}
+  weaponPrefab: {fileID: 1250676245691768492, guid: 8ab268fb8e220574bb00b6cbed5d74df,
     type: 3}
-  muzzleFlash: {fileID: 843040462270162880, guid: d8be49dc6fc53aa47bf541eb591495cc,
+  muzzleFlash: {fileID: 843040462270162880, guid: 0b465afaf2dfd4046abef3c3b2fb0f94,
     type: 3}
-  bulletProjectilePrefab: {fileID: 4113946446770678678, guid: 62595a257ec47134abdbfb54e26a292a,
+  bulletTrail: {fileID: 3738106130314735046, guid: 4283e6f05d147e24c9ab34aa0587df1f,
+    type: 3}
+  bulletProjectilePrefab: {fileID: 3037494990510629775, guid: d6b818b0ee707c14cbc27c6873a79674,
     type: 3}
   knifeSlashEffect: {fileID: 0}
-  weaponAudioSO: {fileID: 11400000, guid: 2a4f85aa6b8f5af49891aba7b56f99e4, type: 2}
-  recoilX: -18
-  recoilY: 4
-  recoilZ: 4
+  weaponAudioSO: {fileID: 0}
+  recoilX: -9
+  recoilY: 7
+  recoilZ: 8
+  aimingRecoilX: -6
+  aimingRecoilY: 5
+  aimingRecoilZ: 6
   magazineSize: 30
   storedAmmo: 210
-  range: 150
-  damage: 35
-  fireRate: 0.1
-  bulletSpeed: 0.08
+  range: 160
+  damage: 23
+  headShotDamage: 29
+  fireRate: 0.094
+  bulletSpeed: 2000
+  aimingSpread: 0.17
+  spread: 4
   weaponType: 0
   weaponStyle: 0
   fireType: 0

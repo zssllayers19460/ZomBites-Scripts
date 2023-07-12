@@ -9,24 +9,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 053983f2e97f8624db810668ee0a2534, type: 3}
+  m_Script: {fileID: 11500000, guid: 497a37e731c2efd4db9740547fb71447, type: 3}
   m_Name: Frag Grenade
   m_EditorClassIdentifier: 
-  name: Frag Grenade
-  description: Frag Grenade
-  icon: {fileID: 21300000, guid: b33578f7986977246ba2a27dc2ae4346, type: 3}
-  meleePrefab: {fileID: 1096182540108666025, guid: 9c88a919821d223479003c7162778ba2,
+  name: MK2 Frag Grenade
+  description: The Mk2 Frag Grenade is a powerful explosive device commonly used
+    by military and law enforcement personnel. With its compact design and lethal
+    fragmentation radius, it delivers devastating impact and shrapnel damage upon
+    detonation.
+  icon: {fileID: 21300000, guid: 5f2162e2e9d7a5845a253a42ed2eca3a, type: 3}
+  meleePrefab: {fileID: 3341411997981465886, guid: a4e6108c02c1cb943bd4b18d996a709d,
     type: 3}
-  explosionEffect: {fileID: 4501055269107238487, guid: fe10d5c48e80a8042a2856b9809b6a6f,
+  explosionEffect: {fileID: 4501055269107238487, guid: 3745039088c715444ac85adaba75d7f8,
     type: 3}
-  dangerGrenadeImage: {fileID: 21300000, guid: b33578f7986977246ba2a27dc2ae4346, type: 3}
-  throwForce: 18
-  explosionDelay: 4
-  explosionRadius: 7
-  explosionForce: 1500
-  damage: 108
-  grenadeToHold: 1
-  grenadesInInventory: 5
-  meleeAudioSO: {fileID: 11400000, guid: 23301e42895305b41ad10c81751b1fae, type: 2}
+  dangerGrenadeImage: {fileID: 0}
+  throwForce: 15
+  explosionDelay: 5
+  explosionRadius: 40
+  explosionForce: 30
+  damage: 60
+  storedGrenades: 1
+  maxGrenades: 4
+  meleeAudioSO: {fileID: 0}
   handHeldStyle: 0
   handHeldType: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(menuName = "Add a New Melee...")]
+[CreateAssetMenu(fileName = "New Melee Weapon", menuName = "Melee/Add a New Melee...")]
 public class Melee : Item
 {
     public GameObject meleePrefab;
@@ -14,9 +14,8 @@ public class Melee : Item
     public float explosionRadius;
     public float explosionForce;
     public int damage;
-    public int grenadeToHold;  // amount of grenades allowed to hold in the hand at once
-    public int grenadesInInventory; // amount of grenades allowed in the inventory
-    public MeleeAudioSO meleeAudioSO;
+    public int storedGrenades;  // amount of grenades allowed to hold in the hand at once
+    public int maxGrenades; // amount of grenades allowed in the inventory
     public HandHeldStyle handHeldStyle;
     public HandHeldType handHeldType;
 }

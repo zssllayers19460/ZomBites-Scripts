@@ -9,30 +9,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b20f5a4328b6c449e276376feeaafc, type: 3}
+  m_Script: {fileID: 11500000, guid: 31d074cfcf595384ba8a3e58d4f9719b, type: 3}
   m_Name: RPG-7
   m_EditorClassIdentifier: 
   name: RPG-7
-  description: A portable, reusable, unguided, shoulder-launched, anti-tank, rocket-propelled
-    grenade launcher
-  icon: {fileID: 21300000, guid: f6efd5be3b69de94bab5a61996aa07b8, type: 3}
-  weaponPrefab: {fileID: 4401598529112238086, guid: a531883403b65fc49a8543e340eb1135,
+  description: The RPG-7 is a portable, shoulder-fired anti-tank rocket launcher,
+    It features a simple but effective design, consisting of a rocket-propelled grenade
+    and a disposable launch tube.
+  icon: {fileID: 21300000, guid: 64bfe9793136bbc48b271152933113ee, type: 3}
+  weaponPrefab: {fileID: 747748113524859120, guid: fe3fec1e3ba93dc46b4bd3221a2f942e,
     type: 3}
-  muzzleFlash: {fileID: 483200998152565396, guid: 20c0f7e297297fc468f9740f6bb08cb1,
+  muzzleFlash: {fileID: 483200998152565396, guid: 2277e455cdf7363448080c8316f43c06,
     type: 3}
-  bulletProjectilePrefab: {fileID: 2447636517559979008, guid: 107480146231a8049aa85e1b2dee9079,
+  bulletTrail: {fileID: 483200998152565396, guid: 2277e455cdf7363448080c8316f43c06,
+    type: 3}
+  bulletProjectilePrefab: {fileID: 2447636517559979008, guid: 6bb8db0dc51b8d84e9974a695215a736,
     type: 3}
   knifeSlashEffect: {fileID: 0}
-  weaponAudioSO: {fileID: 11400000, guid: 92ed52aba5788224b80e24c26ab683e6, type: 2}
-  recoilX: -15
-  recoilY: 2
-  recoilZ: 2
+  weaponAudioSO: {fileID: 0}
+  recoilX: -20
+  recoilY: 12
+  recoilZ: 10
+  aimingRecoilX: -15
+  aimingRecoilY: 8
+  aimingRecoilZ: 7
   magazineSize: 1
   storedAmmo: 5
-  range: 200
-  damage: 150
-  fireRate: 1
-  bulletSpeed: 0.6
+  range: 150
+  damage: 90
+  headShotDamage: 110
+  fireRate: 1.5
+  bulletSpeed: 1
+  aimingSpread: 0.1
+  spread: 0.8
   weaponType: 6
   weaponStyle: 1
   fireType: 1

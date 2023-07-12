@@ -9,31 +9,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b20f5a4328b6c449e276376feeaafc, type: 3}
+  m_Script: {fileID: 11500000, guid: 31d074cfcf595384ba8a3e58d4f9719b, type: 3}
   m_Name: Beretta 93R
   m_EditorClassIdentifier: 
   name: Beretta 93R
-  description: The Beretta 93R is an Italian selective-fire machine pistol, designed
-    and manufactured by Beretta in the late 1970s for police and military use, that
-    is derived from their semi-automatic Beretta 92
-  icon: {fileID: 21300000, guid: 03adb54ea862cbc4ea859406077df998, type: 3}
-  weaponPrefab: {fileID: 6275458139653450743, guid: f518259f27b67944398329797f820fbb,
+  description: The Beretta 93R is a compact and powerful selective-fire machine pistol
+    that combines exceptional firepower with exceptional control.
+  icon: {fileID: 21300000, guid: 929565731c2a16340a90c5c414e13e94, type: 3}
+  weaponPrefab: {fileID: 6540882693494079990, guid: 87b764b7d77f8b846a30db49a08c79c5,
     type: 3}
-  muzzleFlash: {fileID: 5435863578054752928, guid: a133ddf6c708f424a9f240d179a2a859,
+  muzzleFlash: {fileID: 4975481842922151365, guid: e6fd9a99dddd91b4e9ddd1b59600ca78,
     type: 3}
-  bulletProjectilePrefab: {fileID: 8022321819937785476, guid: b378be7860e085b4897eb44d5b696a4c,
+  bulletTrail: {fileID: 3738106130314735046, guid: 4283e6f05d147e24c9ab34aa0587df1f,
+    type: 3}
+  bulletProjectilePrefab: {fileID: 8022321819937785476, guid: 67b73636948a2854aab31c5bbe0d25d6,
     type: 3}
   knifeSlashEffect: {fileID: 0}
-  weaponAudioSO: {fileID: 11400000, guid: d9425b958369eb84b8cf79dfa6f5a43f, type: 2}
-  recoilX: -8
-  recoilY: 3
-  recoilZ: 4
-  magazineSize: 24
-  storedAmmo: 120
-  range: 50
-  damage: 14
-  fireRate: 0.075
-  bulletSpeed: 0.1
+  weaponAudioSO: {fileID: 0}
+  recoilX: -10
+  recoilY: 6
+  recoilZ: 5
+  aimingRecoilX: -8
+  aimingRecoilY: 6
+  aimingRecoilZ: 5
+  magazineSize: 15
+  storedAmmo: 165
+  range: 70
+  damage: 17
+  headShotDamage: 25
+  fireRate: 0.095
+  bulletSpeed: 2000
+  aimingSpread: 0.18
+  spread: 6
   weaponType: 5
   weaponStyle: 1
   fireType: 2

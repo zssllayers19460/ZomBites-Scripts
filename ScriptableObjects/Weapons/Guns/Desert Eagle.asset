@@ -9,31 +9,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b20f5a4328b6c449e276376feeaafc, type: 3}
+  m_Script: {fileID: 11500000, guid: 31d074cfcf595384ba8a3e58d4f9719b, type: 3}
   m_Name: Desert Eagle
   m_EditorClassIdentifier: 
   name: Desert Eagle
-  description: The Desert Eagle is a gas-operated, semi-automatic pistol known for
-    chambering the .50 Action Express, the largest centerfire cartridge of any magazine-fed,
-    self-loading pistol, just watch the recoil
-  icon: {fileID: 21300000, guid: 91fd87630e1db3f4799712455a6836a1, type: 3}
-  weaponPrefab: {fileID: 315484433421931568, guid: b1a99294217da4548b28a540ea8dfdf7,
+  description: The Desert Eagle is a powerful and iconic semi-automatic handgun known
+    for its imposing size and exceptional firepower. features a gas-operated mechanism
+    and a rotating bolt, allowing it to handle high-powered ammunition with ease.
+  icon: {fileID: 21300000, guid: 08cfb8a880e3c1249a8e1c191003f185, type: 3}
+  weaponPrefab: {fileID: 315484433421931568, guid: 795fa648d9a05b54c9317b02330c92ac,
     type: 3}
-  muzzleFlash: {fileID: 2625809834754039988, guid: b6366363152804d438f8ceca4e35ed73,
+  muzzleFlash: {fileID: 2625809834754039988, guid: f5cfb253afed509458eb4a7c284d96d3,
     type: 3}
-  bulletProjectilePrefab: {fileID: 4082520214709992496, guid: 062201fe730fff549a86fbca5ced1416,
+  bulletTrail: {fileID: 3738106130314735046, guid: 4283e6f05d147e24c9ab34aa0587df1f,
+    type: 3}
+  bulletProjectilePrefab: {fileID: 4082520214709992496, guid: 29cd520ae43b3c241b91feccae9fd7b9,
     type: 3}
   knifeSlashEffect: {fileID: 0}
-  weaponAudioSO: {fileID: 11400000, guid: 465a1a3f26ce0b248b2aa8c719c2acb3, type: 2}
-  recoilX: -12
+  weaponAudioSO: {fileID: 0}
+  recoilX: -10
   recoilY: 8
-  recoilZ: 5
+  recoilZ: 6
+  aimingRecoilX: -5
+  aimingRecoilY: 4
+  aimingRecoilZ: 3
   magazineSize: 8
-  storedAmmo: 58
-  range: 50
-  damage: 25
-  fireRate: 0.5
-  bulletSpeed: 0.5
+  storedAmmo: 96
+  range: 80
+  damage: 20
+  headShotDamage: 0
+  fireRate: 0.2
+  bulletSpeed: 2000
+  aimingSpread: 0.5
+  spread: 5
   weaponType: 5
   weaponStyle: 1
   fireType: 0

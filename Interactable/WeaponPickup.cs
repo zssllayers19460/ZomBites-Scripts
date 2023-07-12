@@ -6,13 +6,16 @@ using TMPro;
 
 public class WeaponPickup : MonoBehaviour
 {
+    [SerializeField] private KeyCode pickupKey = KeyCode.E;
     public float pickupRange;
     [SerializeField] private float weaponDestroyDelay;
     [SerializeField] private LayerMask pickupLayer;
 
-    [SerializeField] private Image weaponPickup;
-    [SerializeField] private Image weaponPickupIcon;
-    [SerializeField] private TextMeshProUGUI weaponPickupText;
+    [SerializeField] private Image pickupIndicatorImage;
+    [SerializeField] private Image weaponIcon;
+    [SerializeField] private TextMeshProUGUI pickupText;
+
+     // Customizable pickup prompt text
 
     // Script References
     private Camera cam;
@@ -21,9 +24,9 @@ public class WeaponPickup : MonoBehaviour
     private void Start()
     {
         GetReferences();
-        weaponPickupIcon.gameObject.SetActive(false);
-        weaponPickupText.gameObject.SetActive(false);
-        weaponPickup.gameObject.SetActive(false);
+        weaponIcon.gameObject.SetActive(false);
+        pickupText.gameObject.SetActive(false);
+        pickupIndicatorImage.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -33,23 +36,23 @@ public class WeaponPickup : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, pickupRange, pickupLayer))
         {
-            weaponPickup.gameObject.SetActive(true);
-            weaponPickupIcon.gameObject.SetActive(true);
-            weaponPickupText.gameObject.SetActive(true);
+            pickupIndicatorImage.gameObject.SetActive(true);
+            weaponIcon.gameObject.SetActive(true);
+            pickupText.gameObject.SetActive(true);
 
-            // Update UI text and icon    // for some reason pickup is added to the end of the text so it needs this lin
-            string itemName = hit.transform.name.Replace("Pickup", "");
-            weaponPickupText.text = "Press E to swap " + itemName;
             Item item = hit.transform.GetComponent<ItemObject>().item;
-            weaponPickupIcon.sprite = item.icon;
+            string itemName = item.name;
+            pickupText.text = $"Press {pickupKey} to pick up {itemName}"; // Using string interpolation
+            //pickupText.text = "Press " + pickupKey + " to pick up " + itemName; // Using concatenation
+            weaponIcon.sprite = item.icon;
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(pickupKey))
             {
                 if (item is Weapon newWeapon)
                 {
                     inventory.AddItem(newWeapon);
                 }
-                else if (item is Melee newMelee)
+                if (item is Melee newMelee)
                 {
                     inventory.AddMeleeItem(newMelee);
                 }
@@ -60,9 +63,9 @@ public class WeaponPickup : MonoBehaviour
         }
         else
         {
-            weaponPickup.gameObject.SetActive(false);
-            weaponPickupIcon.gameObject.SetActive(false);
-            weaponPickupText.gameObject.SetActive(false);
+            pickupIndicatorImage.gameObject.SetActive(false);
+            weaponIcon.gameObject.SetActive(false);
+            pickupText.gameObject.SetActive(false);
         }
     }
 

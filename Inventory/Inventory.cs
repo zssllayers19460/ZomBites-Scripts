@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
     // 0 = Primary, 1 = Secondary, 2 = Melee
     [SerializeField] private Weapon[] weapons;
     [SerializeField] private Melee[] melee;
+    [SerializeField] private List<Loot> lootItems; // List to store loot items
 
     // Script References
     private Shooting shooting;
@@ -39,8 +40,11 @@ public class Inventory : MonoBehaviour
             RemoveMeleeItem(newMeleeIndex);
         }
         melee[newMeleeIndex] = newMeleeItem;
+    }
 
-        //lethalShooting.InitAmmo((int)newMeleeItem.handHeldStyle, newMeleeItem);
+    public void AddLootItem(Loot newLootItem)
+    {
+        lootItems.Add(newLootItem);
     }
 
     public void RemoveItem(int index)
@@ -51,6 +55,11 @@ public class Inventory : MonoBehaviour
     public void RemoveMeleeItem(int index)
     {
         melee[index] = null;
+    }
+
+    public void RemoveLootItem(Loot lootItem)
+    {
+        lootItems.Remove(lootItem);
     }
 
     public Weapon GetItem(int index)
@@ -67,6 +76,7 @@ public class Inventory : MonoBehaviour
     {
         weapons = new Weapon[3];
         melee = new Melee[4];
+        lootItems = new List<Loot>();
     }
 
     private void GetReferences()

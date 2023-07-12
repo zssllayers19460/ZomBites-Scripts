@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8bd8420906ffeb4caf1656319fcd780, type: 3}
+  m_Name: First Aid Kit
+  m_EditorClassIdentifier: 
+  lootName: First Aid Kit
+  description: First Aid Kit
+  lootIcon: {fileID: 0}
+  spawnChance: 30
+  hungerRegenrationAmount: 0
+  thirstRegenrationAmount: 0
+  healthRegenrationAmount: 40
+  lootType: 2
+  lootPrefab: {fileID: 0}

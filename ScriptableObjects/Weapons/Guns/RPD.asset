@@ -9,30 +9,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b20f5a4328b6c449e276376feeaafc, type: 3}
+  m_Script: {fileID: 11500000, guid: 31d074cfcf595384ba8a3e58d4f9719b, type: 3}
   m_Name: RPD
   m_EditorClassIdentifier: 
   name: RPD
-  description: The RPD is an automatic weapon using a gas-operated long-stroke piston
-    system and a locking system recycled from previous Degtyaryov small arms
-  icon: {fileID: 21300000, guid: d895794fbc310ca4993556ef44f76e4c, type: 3}
-  weaponPrefab: {fileID: 1212388257550826135, guid: 74e11f6845d9974458c7a0bb0363bc6d,
+  description: The RPD is a light machine gun that originated in the Soviet Union.
+    Known for its reliability and high rate of fire, the RPD features a distinctive
+    drum magazine and is chambered for the 7.62x39mm cartridge
+  icon: {fileID: 21300000, guid: 86c85ca389f42fd4abd74cdc94591189, type: 3}
+  weaponPrefab: {fileID: 6509342014496968373, guid: 6d5de6b707e43664abd82fa9727b77b4,
     type: 3}
-  muzzleFlash: {fileID: 1454176793207945352, guid: f87cea73c90085d4095f84266f4b8756,
+  muzzleFlash: {fileID: 1454176793207945352, guid: 0e5c658b3ee7faa42ab5c2f14475687d,
     type: 3}
-  bulletProjectilePrefab: {fileID: 4113946446770678678, guid: 62595a257ec47134abdbfb54e26a292a,
+  bulletTrail: {fileID: 3738106130314735046, guid: 4283e6f05d147e24c9ab34aa0587df1f,
+    type: 3}
+  bulletProjectilePrefab: {fileID: 3037494990510629775, guid: d6b818b0ee707c14cbc27c6873a79674,
     type: 3}
   knifeSlashEffect: {fileID: 0}
-  weaponAudioSO: {fileID: 11400000, guid: fdb3b5a9c4afca847985b4be5a25f99e, type: 2}
-  recoilX: -8
-  recoilY: 5
-  recoilZ: 5
-  magazineSize: 75
-  storedAmmo: 225
-  range: 110
-  damage: 15
-  fireRate: 0.09
-  bulletSpeed: 0.09
+  weaponAudioSO: {fileID: 0}
+  recoilX: -12
+  recoilY: 6
+  recoilZ: 7
+  aimingRecoilX: -8
+  aimingRecoilY: 5
+  aimingRecoilZ: 5
+  magazineSize: 50
+  storedAmmo: 300
+  range: 120
+  damage: 22
+  headShotDamage: 25
+  fireRate: 0.19
+  bulletSpeed: 2000
+  aimingSpread: 0.3
+  spread: 5
   weaponType: 2
   weaponStyle: 0
   fireType: 0

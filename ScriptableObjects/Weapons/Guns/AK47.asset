@@ -9,30 +9,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b20f5a4328b6c449e276376feeaafc, type: 3}
+  m_Script: {fileID: 11500000, guid: 31d074cfcf595384ba8a3e58d4f9719b, type: 3}
   m_Name: AK47
   m_EditorClassIdentifier: 
   name: AK-47
-  description: "The standard AK-47 is a gas-operated assault rifle that fires a 7.62
-    \xD7 39 mm round with a muzzle velocity of 710 metres per second (2,329 ft/s)."
-  icon: {fileID: 21300000, guid: fe1808298a072f142958df499729efb5, type: 3}
-  weaponPrefab: {fileID: 4141670183180867651, guid: 1d8d904f9374a544cb9cc643064fdf36,
+  description: AK47
+  icon: {fileID: 21300000, guid: 2f3ce3df067b03040b0202612f1cc409, type: 3}
+  weaponPrefab: {fileID: 6939152427171898692, guid: 678bb974c57c3b343b70b5dd6f0dcf15,
     type: 3}
-  muzzleFlash: {fileID: 1000010254994808, guid: 035be25294a229e409eeff51eb4282e5,
+  muzzleFlash: {fileID: 1000010254994808, guid: f9deae6fc61fd6045911f9aa8c5a5b47,
     type: 3}
-  bulletProjectilePrefab: {fileID: 4113946446770678678, guid: 62595a257ec47134abdbfb54e26a292a,
+  bulletTrail: {fileID: 3738106130314735046, guid: 4283e6f05d147e24c9ab34aa0587df1f,
+    type: 3}
+  bulletProjectilePrefab: {fileID: 3037494990510629775, guid: d6b818b0ee707c14cbc27c6873a79674,
     type: 3}
   knifeSlashEffect: {fileID: 0}
-  weaponAudioSO: {fileID: 11400000, guid: 18af1316c10378948b21525369187ecb, type: 2}
-  recoilX: -11
-  recoilY: 4
-  recoilZ: 3
+  recoilX: -15
+  recoilY: 12
+  recoilZ: 10
+  aimingRecoilX: -20
+  aimingRecoilY: 8
+  aimingRecoilZ: 10
   magazineSize: 30
   storedAmmo: 210
-  range: 180
-  damage: 21
-  fireRate: 0.11
-  bulletSpeed: 0.1
+  range: 120
+  damage: 25
+  headShotDamage: 50
+  fireRate: 0.1
+  bulletSpeed: 2000
+  aimingSpread: 0.5
+  spread: 5
   weaponType: 0
   weaponStyle: 0
   fireType: 0

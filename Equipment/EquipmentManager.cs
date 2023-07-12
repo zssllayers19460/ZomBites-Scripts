@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EquipmentManager : MonoBehaviour
 {
-    public int currentlyEquippedWeapon = 2;
+    public int currentlyEquippedWeapon = 0;
     public int currentlyEquippedMelee = 0;
     [HideInInspector] public GameObject currentWeaponObject = null;
     [HideInInspector] public GameObject currentMeleeWeapon = null;
@@ -129,7 +129,7 @@ public class EquipmentManager : MonoBehaviour
     {
         inventory.AddItem(defaultWeapon);
         inventory.AddItem(defaultKnife);
-        EquipWeapon(inventory.GetItem(1));
+        EquipWeapon(inventory.GetItem(0));
     }
 
     private void GetReferences()

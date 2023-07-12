@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 	void Awake()
 	{
 		LockCursor();
+		characterStats = GetComponent<CharacterStats>();
+		uiManager = GetComponent<UiManager>();
 		playerCamera = GetComponentInChildren<Camera>();
 		characterController = GetComponent<CharacterController>();
 		defaultYPos = playerCamera.transform.localPosition.y;
@@ -39,10 +41,10 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private KeyCode crouchKey = KeyCode.C;
 
 	[Header("Movement Parameters")]
-	[SerializeField] private float walkSpeed = 3.0f;
-	[SerializeField] private float sprintSpeed = 6.0f;
-	[SerializeField] private float crouchSpeed = 1.5f;
-	[SerializeField] private float slopeSpeed = 8f;
+	[SerializeField] private float walkSpeed = 5f;
+	[SerializeField] private float sprintSpeed = 8f;
+	[SerializeField] private float crouchSpeed = 3f;
+	[SerializeField] private float slopeSpeed = 10f;
 
 	[Header("Look Parameters")]
 	[SerializeField, Range(1, 10)] private float lookSpeedX = 2.0f;
@@ -64,12 +66,12 @@ public class PlayerController : MonoBehaviour
 	private bool duringCrounchAnimation;
 
 	[Header("Headbob Parameters")]
-	[SerializeField] private float walkBobSpeed = 14f;
-	[SerializeField] private float walkBobAmount = 0.05f;
-	[SerializeField] private float sprintBobSpeed = 18f;
-	[SerializeField] private float sprintBobAmount = 0.11f;
+	[SerializeField] private float walkBobSpeed = 10f;
+	[SerializeField] private float walkBobAmount = 0.02f;
+	[SerializeField] private float sprintBobSpeed = 12f;
+	[SerializeField] private float sprintBobAmount = 0.04f;
 	[SerializeField] private float crouchBobSpeed = 8f;
-	[SerializeField] private float crouchBobAmount = 0.025f;
+	[SerializeField] private float crouchBobAmount = 0.01f;
 	private float defaultYPos = 0;
 	private float timer;
 
@@ -77,7 +79,6 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float baseStepSpeed = 0.45f;
 	[SerializeField] private float crouchStepMultiplier = 0.9f;
 	[SerializeField] private float sprintStepMultiplier = 0.7f;
-	//[SerializeField] private AudioSource audioSource = default;
 	[SerializeField] private AudioClip[] woodClips = default;
 	[SerializeField] private AudioClip[] dirtClips = default;
 	[SerializeField] private AudioClip[] concreteClips = default;
@@ -87,6 +88,8 @@ public class PlayerController : MonoBehaviour
 	private float footstepTimer = 0f;
 	private float GetCurrentOffset => isCrouching ? baseStepSpeed * crouchStepMultiplier : IsSprinting ? baseStepSpeed * sprintStepMultiplier : baseStepSpeed;
 
+	[HideInInspector] public Vector3 moveDirection;
+	private Vector2 currentInput;
 
 	private Vector3 hitPointNormal;
 
@@ -94,8 +97,7 @@ public class PlayerController : MonoBehaviour
 	{
 		get
 		{
-			//Debug.DrawRay(transform.position, Vector3.down, Color.red);
-			if(characterController.isGrounded && Physics.Raycast(transform.position, Vector3.down, out RaycastHit slopeHit, 2f))
+			if (characterController.isGrounded && Physics.Raycast(transform.position, Vector3.down, out RaycastHit slopeHit, 2f))
 			{
 				hitPointNormal = slopeHit.normal;
 				return Vector3.Angle(hitPointNormal, Vector3.up) > characterController.slopeLimit;
@@ -109,32 +111,38 @@ public class PlayerController : MonoBehaviour
 
 	private Camera playerCamera;
 	private CharacterController characterController;
-
-	public Vector3 moveDirection;
-	private Vector2 currentInput;
+	private CharacterStats characterStats;
+	private UiManager uiManager;
 
 	private float rotationX = 0;
 
 	private void Update()
 	{
-		if (CanMove)
+		if(!characterStats.isDead)
 		{
-			HandleMovementInput();
-			HandleMouseLook();
+			if (CanMove)
+			{
+				HandleMovementInput();
+				HandleMouseLook();
 
-			if(canJump)
-				HandleJump();
+				if(canJump)
+					HandleJump();
 
-			if (canCrouch)
-				HandleCrouch();
+				if (canCrouch)
+					HandleCrouch();
 
-			if (canFootsteps)
-				HandleFootsteps();
+				if (canFootsteps)
+					HandleFootsteps();
 
-			if (canUseHeadbob)
-				HandleHeadbob();
+				if (canUseHeadbob)
+					HandleHeadbob();
 
-			ApplyFinalMovement();
+				ApplyFinalMovement();
+			}
+		}
+		else if(Cursor.lockState == CursorLockMode.Locked)
+		{
+			UnlockCursor();
 		}
 	}
 
@@ -149,15 +157,18 @@ public class PlayerController : MonoBehaviour
 
 	private void HandleMouseLook()
 	{
-		rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
-		rotationX = Mathf.Clamp(rotationX, -upperLookLimit, lowerLookLimit);
-		playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-		transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeedX, 0);
+		if(!uiManager.isPaused)
+		{	
+			rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
+			rotationX = Mathf.Clamp(rotationX, -upperLookLimit, lowerLookLimit);
+			playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+			transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeedX, 0);
+		}
 	}
 
 	private void HandleJump()
 	{
-		if (ShouldJump)
+		if (ShouldJump && !isSliding) // Add the condition !isSliding
 			moveDirection.y = jumpForce;
 	}
 
@@ -170,6 +181,7 @@ public class PlayerController : MonoBehaviour
 	private void HandleHeadbob()
 	{
 		if (!characterController.isGrounded) return;
+    	if (isSliding) return;
 
 		if(Mathf.Abs(moveDirection.x) > 0.1f || Mathf.Abs(moveDirection.z) > 0.1f)
 		{
@@ -184,7 +196,7 @@ public class PlayerController : MonoBehaviour
 	private void ApplyFinalMovement()
 	{
 		if (!characterController.isGrounded)
-			moveDirection.y -= gravity * Time.deltaTime;
+		moveDirection.y -= gravity * Time.deltaTime;
 
 		if (willSlideOnSlopes && isSliding)
 			moveDirection += new Vector3(hitPointNormal.x, -hitPointNormal.y, hitPointNormal.z) * slopeSpeed;
@@ -205,10 +217,14 @@ public class PlayerController : MonoBehaviour
 		Vector3 targetCenter = isCrouching ? standingCenter : crouchingCenter;
 		Vector3 currentCenter = characterController.center;
 
-		while(timeElapsed < timeToCrouch)
+		while (timeElapsed < timeToCrouch)
 		{
-			characterController.height = Mathf.Lerp(currentHeight, targetHeight, timeElapsed / timeToCrouch);
-			characterController.center = Vector3.Lerp(currentCenter, targetCenter, timeElapsed / timeToCrouch);
+			float t = timeElapsed / timeToCrouch;
+			float smoothT = Mathf.SmoothStep(0f, 1f, t); // Apply smooth step function
+
+			characterController.height = Mathf.Lerp(currentHeight, targetHeight, smoothT);
+			characterController.center = Vector3.Lerp(currentCenter, targetCenter, smoothT);
+
 			timeElapsed += Time.deltaTime;
 			yield return null;
 		}

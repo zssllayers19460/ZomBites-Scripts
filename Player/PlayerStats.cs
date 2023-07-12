@@ -8,6 +8,8 @@ using UnityEngine;
 public class PlayerStats : CharacterStats
 {
     private PlayerHUD hud;
+    private UiManager uiManager;
+    private ScoreboardManager scoreboardManager;
 
     private void Awake()
     {
@@ -21,8 +23,17 @@ public class PlayerStats : CharacterStats
         hud.UpdateHealth(health, maxHealth);
     }
 
+    public override void Die()
+    {
+        base.Die();
+        uiManager.SetActiveHud(false);
+        scoreboardManager.UpdatePlayerKills(1);
+    }
+
     private void GetReferences()
     {
         hud = GetComponent<PlayerHUD>();
+        uiManager = GetComponent<UiManager>();
+        scoreboardManager = FindObjectOfType<ScoreboardManager>();
     }
 }

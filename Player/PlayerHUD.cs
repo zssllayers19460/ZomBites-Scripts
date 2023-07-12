@@ -6,12 +6,14 @@ using TMPro;
 
 public class PlayerHUD : MonoBehaviour
 {
-    [SerializeField] private HealthBar healthBar;
+    //[SerializeField] private HealthBar healthBar;
+    [SerializeField] private HealthUI healthUi;
     [SerializeField] private WeaponUI weaponUI;
 
     public void UpdateHealth(int currentHealth, int maxHealth)
     {
-        healthBar.SetValues(currentHealth, maxHealth);
+        //healthBar.SetValues(currentHealth, maxHealth);
+        healthUi.SetValues(currentHealth, maxHealth);
     }
 
     public void UpdateWeaponUI(Weapon newWeapon)

@@ -9,35 +9,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b20f5a4328b6c449e276376feeaafc, type: 3}
+  m_Script: {fileID: 11500000, guid: 31d074cfcf595384ba8a3e58d4f9719b, type: 3}
   m_Name: Mini Gun
   m_EditorClassIdentifier: 
-  name: Mini Gun M134
-  description: M134 is a formidable and iconic rotary machine gun known for its high
-    rate of fire and immense firepower. It features multiple barrels that rotate
-    to rapidly fire rounds, typically 7.62mm or .308 caliber, and can be operated
-    from a vehicle, aircraft, or tripod mount. With its devastating firepower, the
-    M134 is capable of quickly dispensing a large number of rounds, making it a potent
-    weapon in combat situations where overwhelming force is required. However, its
-    size and weight can make it challenging to maneuver
-  icon: {fileID: 21300000, guid: 5633917ae61cd0b4590e7caad4982dca, type: 3}
-  weaponPrefab: {fileID: 6886318424276076116, guid: f34f2ecf5fa77d6419edc4137ca62794,
+  name: M134 Mini Gun
+  description: The M134 Mini Gun is a fearsome weapon known for its devastating firepower.
+    Designed as a six-barreled rotary machine gun, it can unleash an awe-inspiring
+    hail of bullets at an incredible rate of fire.
+  icon: {fileID: 21300000, guid: f10dd2e7db3c1f2469342716613d4bb8, type: 3}
+  weaponPrefab: {fileID: 1491405665298951398, guid: 8399db7b65aa65c448fae1dee66e5bfa,
     type: 3}
-  muzzleFlash: {fileID: 1000010254994808, guid: 604d0998f70c0c8469c029b51053bf3c,
+  muzzleFlash: {fileID: 1000010254994808, guid: 666196738c9be694a9adcf4ccb3ad851,
     type: 3}
-  bulletProjectilePrefab: {fileID: 4113946446770678678, guid: 62595a257ec47134abdbfb54e26a292a,
+  bulletTrail: {fileID: 3738106130314735046, guid: 4283e6f05d147e24c9ab34aa0587df1f,
+    type: 3}
+  bulletProjectilePrefab: {fileID: 3037494990510629775, guid: d6b818b0ee707c14cbc27c6873a79674,
     type: 3}
   knifeSlashEffect: {fileID: 0}
-  weaponAudioSO: {fileID: 11400000, guid: b1a0c3f5ba7812f4a9144e4750832573, type: 2}
-  recoilX: -0.5
-  recoilY: 1.9
-  recoilZ: 1.7
+  weaponAudioSO: {fileID: 0}
+  recoilX: -2
+  recoilY: 3
+  recoilZ: 4
+  aimingRecoilX: -1
+  aimingRecoilY: 1.5
+  aimingRecoilZ: 1.2
   magazineSize: 500
-  storedAmmo: 1000
-  range: 300
-  damage: 6
-  fireRate: 0.01
-  bulletSpeed: 0.08
+  storedAmmo: 2000
+  range: 100
+  damage: 35
+  headShotDamage: 50
+  fireRate: 0.6
+  bulletSpeed: 3000
+  aimingSpread: 0.8
+  spread: 4
   weaponType: 7
   weaponStyle: 0
   fireType: 0

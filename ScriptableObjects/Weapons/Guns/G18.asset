@@ -9,31 +9,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b20f5a4328b6c449e276376feeaafc, type: 3}
+  m_Script: {fileID: 11500000, guid: 31d074cfcf595384ba8a3e58d4f9719b, type: 3}
   m_Name: G18
   m_EditorClassIdentifier: 
   name: G18
-  description: G18 is one of the most specialized GLOCK pistols. With an external
-    fire selector at the rear of the slide you can switch from semi-automatic to
-    full-automatic firing mode.
-  icon: {fileID: 21300000, guid: b3b6abebd16ef52438c1658af6d8c700, type: 3}
-  weaponPrefab: {fileID: 4994546158967591746, guid: 1e231328e570bdd4480d6b9fe5d6a96f,
+  description: The G18 is a highly versatile and reliable firearm designed for professional
+    use. With its compact size, lightweight construction, and exceptional firepower,
+    the G18 is a preferred choice for law enforcement and special forces worldwide.
+  icon: {fileID: 21300000, guid: 08df0817eaf3e59439c8622555da7e8e, type: 3}
+  weaponPrefab: {fileID: 2779955720256244340, guid: 6153c1247c748b6478914c5cdc19b4d8,
     type: 3}
-  muzzleFlash: {fileID: 5059892152033221063, guid: afcbaa639319da947974254cbead7a55,
+  muzzleFlash: {fileID: 5059892152033221063, guid: 0bba98e0c30f4cf4caac2fe9e7b0bd51,
     type: 3}
-  bulletProjectilePrefab: {fileID: 8022321819937785476, guid: b378be7860e085b4897eb44d5b696a4c,
+  bulletTrail: {fileID: 3738106130314735046, guid: 4283e6f05d147e24c9ab34aa0587df1f,
+    type: 3}
+  bulletProjectilePrefab: {fileID: 8022321819937785476, guid: 67b73636948a2854aab31c5bbe0d25d6,
     type: 3}
   knifeSlashEffect: {fileID: 0}
-  weaponAudioSO: {fileID: 11400000, guid: 38f1d902a5ddd0242bea8842b4d072db, type: 2}
-  recoilX: -8
-  recoilY: 3
-  recoilZ: -3
-  magazineSize: 20
-  storedAmmo: 160
-  range: 75
-  damage: 14
-  fireRate: 0.095
-  bulletSpeed: 0.2
+  weaponAudioSO: {fileID: 0}
+  recoilX: -15
+  recoilY: 8
+  recoilZ: 5
+  aimingRecoilX: -9
+  aimingRecoilY: 7
+  aimingRecoilZ: 6
+  magazineSize: 18
+  storedAmmo: 108
+  range: 70
+  damage: 18
+  headShotDamage: 20
+  fireRate: 0.12
+  bulletSpeed: 2000
+  aimingSpread: 0.8
+  spread: 5
   weaponType: 5
   weaponStyle: 1
   fireType: 0

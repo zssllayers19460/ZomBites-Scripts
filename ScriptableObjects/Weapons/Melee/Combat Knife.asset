@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31d074cfcf595384ba8a3e58d4f9719b, type: 3}
+  m_Name: Combat Knife
+  m_EditorClassIdentifier: 
+  name: Combat Knife
+  description: The Combat Knife is a well trusted weapon in the world, even the apocalypse
+    and with a sharp, fixed blade and a sturdy handle, it is optimized for quick
+    and precise strikes.
+  icon: {fileID: 21300000, guid: c1c58af0dc46add4cb498d88641a77be, type: 3}
+  weaponPrefab: {fileID: 919132149155446097, guid: dde23fcf4ee92e144ac0a6f0b0163159,
+    type: 3}
+  muzzleFlash: {fileID: 0}
+  bulletTrail: {fileID: 0}
+  bulletProjectilePrefab: {fileID: 0}
+  knifeSlashEffect: {fileID: 0}
+  weaponAudioSO: {fileID: 0}
+  recoilX: 0
+  recoilY: 0
+  recoilZ: 0
+  aimingRecoilX: 0
+  aimingRecoilY: 0
+  aimingRecoilZ: 0
+  magazineSize: 1
+  storedAmmo: 1
+  range: 5
+  damage: 50
+  headShotDamage: 100
+  fireRate: 1
+  bulletSpeed: 0
+  aimingSpread: 0
+  spread: 0
+  weaponType: 8
+  weaponStyle: 2
+  fireType: 1
